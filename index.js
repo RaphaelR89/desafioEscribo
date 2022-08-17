@@ -1,28 +1,48 @@
-function resultados(arg){
-  let soma = 0;
-  let res = [];
-  for (var i = 0; i < arg; i++) if (i % 15 == 0) res.push(i); 
-  
-  function total(res) {
-    for (let i = 0; i < res.length; i++) {
-      soma = soma + res[i];
+//Função dentro de função
+
+function resultados(numeros) {
+  let valorInicial = 0;
+  let listaDivisiveis = [];
+  for (var i = 0; i < numeros; i++) if (i % 15 == 0) listaDivisiveis.push(i);
+
+  function total(listaDivisiveis) {
+    for (let i = 0; i < listaDivisiveis.length; i++) {
+      valorInicial = valorInicial + listaDivisiveis[i];
     }
-    return soma;
+    return valorInicial;
   }
-  let res1 =res
-  return total(res1)
+  let resultado = listaDivisiveis;
+  return total(resultado);
 }
 
+const resposta = resultados(300);
+
+console.log("O resultado da soma dos divisivéis é:  " + resposta);
+
+// Função simples
+
+// Altere o valor da váriavel numeroInteiro para um número de sua escolha
+let numeroInteiro = 100;
 
 // Todo número divisivel por 15 ele é automaticamente divisivel por 3 e 5.
+let listaDivisiveis = [];
+for (var i = 0; i < numeroInteiro; i++)
+  if (i % 15 == 0) listaDivisiveis.push(i);
 
-//Inicio da função 
-
+//Inicio da função
+function somaDivisivel(ar) {
+  let valorInicial = 0;
+  for (let i = 0; i < ar.length; i++) {
+    valorInicial = valorInicial + ar[i];
+  }
+  return valorInicial;
+}
 //Chamando a função + passando array como argumento
-// Altere o valor do argumento (ARG)  para um número de sua escolha
-const resultado = resultados(100);
-
+somaDivisivel(listaDivisiveis);
+console.log("Os números divisíveis por 3 e 5 são: " + listaDivisiveis);
 console.log(
-  "O resultado da soma dos divisivéis do número "
-    +resultado
+  "O resultado da soma dos divisivéis do número " +
+    numeroInteiro +
+    " é " +
+    somaDivisivel(listaDivisiveis)
 );
