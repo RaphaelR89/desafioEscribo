@@ -15,7 +15,7 @@ function resultados(numeros) {
   return total(resultado);
 }
 
-const resposta = resultados(300);
+const resposta = resultados(100);
 
 console.log("O resultado da soma dos divisivéis é:  " + resposta);
 
